@@ -1,8 +1,36 @@
 package br.com.enzo.rpg.model;
 
-public class Inimigo extends Personagem {
+public class Inimigo {
 
-    public Inimigo(String nome, ClassePersonagem classe) {
-        super(nome, classe);
+    private String nome;
+    private int vida;
+    private int dano;
+
+    public Inimigo(String nome, int vida, int dano) {
+        this.nome = nome;
+        this.vida = vida;
+        this.dano = dano;
     }
+
+    public void receberDano(int dano) {
+        this.vida -= dano;
+    }
+
+    public boolean estaVivo() {
+        return vida > 0;
+    }
+
+    public int getVida() {
+        return vida;
+    }
+
+    public int getDano() {
+        return dano;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+
 }

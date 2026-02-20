@@ -11,6 +11,7 @@ public class Personagem {
         this.ataque = classe.getAtaqueBase();
         this.classe = classe;
         this.vida = classe.getVidaBase();
+
     }
 
     public String getNome() {
@@ -49,6 +50,7 @@ public class Personagem {
         alvo.vida -= ataque.getDano();
         System.out.println(nome + " usou " + ataque.getNome() + " causando " + ataque.getDano() + " de dano em " + alvo.getNome());
     }
+
 
 
 }
