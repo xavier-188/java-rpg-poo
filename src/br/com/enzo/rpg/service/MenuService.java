@@ -1,6 +1,7 @@
 package br.com.enzo.rpg.service;
 
 import br.com.enzo.rpg.model.ClassePersonagem;
+import br.com.enzo.rpg.model.Inimigo;
 import br.com.enzo.rpg.model.Jogador;
 import br.com.enzo.rpg.model.TipoInimigo;
 import br.com.enzo.rpg.util.Console;
@@ -26,17 +27,19 @@ public class MenuService {
 
     public int menuPrincipal(Jogador jogador) {
 
-            System.out.println("\n==========================");
-            System.out.println("Personagem: " + jogador.getNome());
-            System.out.println("Classe: " + jogador.getClasse().name());
-            System.out.println("Ataques: " + jogador.getAtaque().getNome());
-            System.out.println("XP: " + jogador.getXp());
-            System.out.println("==========================\n");
-            System.out.println("MENU");
-            System.out.println("1)Batalhar");
-            System.out.println("2)Treinar");
-            System.out.println("3)Sair");
-            return Console.lerInt();
+        System.out.println("\n==========================");
+        System.out.println("Personagem: " + jogador.getNome());
+        System.out.println("Classe: " + jogador.getClasse().name());
+        System.out.println("Ataques: " + jogador.getAtaque().getNome());
+        System.out.println("Nível: " + jogador.getNivel());
+        System.out.println("XP: " + jogador.getXp());
+        System.out.println("==========================\n");
+        System.out.println("MENU");
+        System.out.println("1)Batalhar");
+        System.out.println("2)Treinar");
+        System.out.println("3)Descansar");
+        System.out.println("4)Sair");
+        return Console.lerInt();
     }
 
     public TipoInimigo escolherInimigo(Jogador jogador) {
@@ -67,6 +70,19 @@ public class MenuService {
     }
 
 
+    public void treinar(Jogador jogador) {
+        System.out.print(jogador.getNome() + " está treinando");
+        try {
+            for (int i = 0; i < 5; i++) {
+                Thread.sleep(1000);
+                System.out.print(".");
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        jogador.ganharXp(10);
+        System.out.println("\nTreinou! + 10xp");
+    }
 
 
 }

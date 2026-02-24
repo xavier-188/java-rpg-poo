@@ -26,7 +26,7 @@ public class BatalhaService {
                 inimigoEscolhido.getDano()
         );
 
-        while (inimigo.estaVivo()) {
+        while (inimigo.estaVivo() && jogador.getVida() > 0) {
 
             System.out.println("\n1) Atacar - " + jogador.getAtaque().getNome());
             System.out.println("2) Fugir");
@@ -35,23 +35,35 @@ public class BatalhaService {
             switch (op) {
 
                 case 1:
+                    inimigo.receberDano(jogador.getAtaque().getDano());
                     System.out.println(jogador.getNome() + " atacou "
                             + inimigo.getNome() + " com "
                             + jogador.getAtaque().getNome());
+                    if (inimigo.estaVivo()) {
+                        jogador.receberDano(inimigo.getDano());
+                        System.out.println(inimigo.getNome() + " contra-atacou!\n");
+                        System.out.println(jogador.getNome() + ": " + jogador.getVida() + "----🗡️----" + inimigo.getNome() + ": " + inimigo.getVida());
+                    }
 
-                    inimigo.receberDano(jogador.getAtaque().getDano());
+
                     break;
 
                 case 2:
                     System.out.println("Você fugiu!");
                     return;
+
             }
+        }
+        if (jogador.getVida() <= 0){
+            System.out.println("Você foi derrotado!");
+            return;
         }
 
         System.out.println("Você derrotou " + inimigo.getNome());
         jogador.ganharXp(inimigoEscolhido.getXpConcedido());
         System.out.println("XP Concedido: " + inimigoEscolhido.getXpConcedido());
     }
+
 
 }
 

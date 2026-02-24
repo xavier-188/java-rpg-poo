@@ -1,8 +1,8 @@
 package br.com.enzo.rpg.model;
 
 public enum ClassePersonagem {
-    GUERREIRO(new Ataque("Espadada Bruta", 12), 100),
-    MAGO(new Ataque("Bola de Fogo", 25), 80),
+    GUERREIRO(new Ataque("Espadada Bruta", 10), 100),
+    MAGO(new Ataque("Bola de Fogo", 20), 80),
     ARQUEIRO(new Ataque("Flechada", 15), 60),
     ORC(new Ataque("Soco Potente", 20), 150);
 

@@ -13,6 +13,13 @@ public class Personagem {
         this.vida = classe.getVidaBase();
 
     }
+    public void receberDano(int dano) {
+        this.vida -= dano;
+        if (vida < 0) {
+            vida = 0;
+        }
+    }
+
 
     public String getNome() {
         return nome;

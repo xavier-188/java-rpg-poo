@@ -14,6 +14,9 @@ public class Inimigo {
 
     public void receberDano(int dano) {
         this.vida -= dano;
+        if (vida < 0) {
+            vida = 0;
+        }
     }
 
     public boolean estaVivo() {

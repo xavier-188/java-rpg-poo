@@ -14,6 +14,7 @@ public class JogoService {
     private MenuService menuService = new MenuService();
     private BatalhaService batalhaService = new BatalhaService();
 
+
     public void iniciar() {
         System.out.println("============================");
         System.out.println("  \uD83D\uDDE1\uFE0F RPG JAVA \uD83D\uDDE1\uFE0F");
@@ -30,15 +31,23 @@ public class JogoService {
 
         do {
             op = menuService.menuPrincipal(jogador);
-            switch (op){
+            switch (op) {
 
                 case 1:
                     batalhaService.batalhar(jogador);
                     break;
+
+                case 2:
+                    menuService.treinar(jogador);
+                    break;
+
+                case 3:
+                    jogador.descansar();
+                    break;
+
             }
 
-        }while (op != 3);
-
+        } while (op != 4);
 
 
     }
