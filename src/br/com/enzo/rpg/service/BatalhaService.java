@@ -12,19 +12,9 @@ public class BatalhaService {
     private MenuService menuService = new MenuService();
 
 
-    public void batalhar(Jogador jogador) {
+    public void batalhar(Jogador jogador, Inimigo inimigo) {
 
-        TipoInimigo inimigoEscolhido = menuService.escolherInimigo(jogador);
-
-        if (inimigoEscolhido == null) {
-            return;
-        }
-
-        Inimigo inimigo = new Inimigo(
-                inimigoEscolhido.getNome(),
-                inimigoEscolhido.getVida(),
-                inimigoEscolhido.getDano()
-        );
+        System.out.println("\nVocê está enfrentando: " + inimigo.getNome());
 
         while (inimigo.estaVivo() && jogador.getVida() > 0) {
 
@@ -36,32 +26,27 @@ public class BatalhaService {
 
                 case 1:
                     inimigo.receberDano(jogador.getAtaque().getDano());
-                    System.out.println(jogador.getNome() + " atacou "
-                            + inimigo.getNome() + " com "
-                            + jogador.getAtaque().getNome());
+                    System.out.println(jogador.getNome() + " atacou " + inimigo.getNome() + " com " + jogador.getAtaque().getNome());
                     if (inimigo.estaVivo()) {
                         jogador.receberDano(inimigo.getDano());
                         System.out.println(inimigo.getNome() + " contra-atacou!\n");
                         System.out.println(jogador.getNome() + ": " + jogador.getVida() + "----🗡️----" + inimigo.getNome() + ": " + inimigo.getVida());
                     }
-
-
                     break;
 
                 case 2:
                     System.out.println("Você fugiu!");
                     return;
-
             }
         }
-        if (jogador.getVida() <= 0){
+        if (jogador.getVida() <= 0) {
             System.out.println("Você foi derrotado!");
             return;
         }
 
         System.out.println("Você derrotou " + inimigo.getNome());
-        jogador.ganharXp(inimigoEscolhido.getXpConcedido());
-        System.out.println("XP Concedido: " + inimigoEscolhido.getXpConcedido());
+        jogador.ganharXp(inimigo.getXpConcedido());
+        System.out.println("XP Concedido: " + inimigo.getXpConcedido());
     }
 
 

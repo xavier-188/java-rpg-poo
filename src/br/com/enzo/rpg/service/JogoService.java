@@ -6,7 +6,9 @@ import br.com.enzo.rpg.model.Jogador;
 import br.com.enzo.rpg.model.TipoInimigo;
 import br.com.enzo.rpg.util.BarraUtil;
 import br.com.enzo.rpg.util.Console;
+import br.com.enzo.rpg.util.InimigoFactory;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class JogoService {
@@ -34,7 +36,7 @@ public class JogoService {
             switch (op) {
 
                 case 1:
-                    batalhaService.batalhar(jogador);
+                    explorar(jogador);
                     break;
 
                 case 2:
@@ -50,5 +52,23 @@ public class JogoService {
         } while (op != 4);
 
 
+    }
+
+    public void explorar(Jogador jogador) {
+        System.out.println("\nVocê saiu para explorar...");
+        Random random = new Random();
+        int evento = random.nextInt(100);
+
+        try {
+            Thread.sleep(1500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        if (evento <= 50) {
+            Inimigo inimigo = InimigoFactory.gerarInimigo(jogador.getNivel());
+            System.out.println("Você encontrou um " + inimigo.getNome());
+            batalhaService.batalhar(jogador, inimigo);
+
+        }
     }
 }

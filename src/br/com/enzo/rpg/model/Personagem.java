@@ -2,7 +2,8 @@ package br.com.enzo.rpg.model;
 
 public class Personagem {
     private String nome;
-    private int vida;
+    private int vidaAtual;
+    private int vidaMaxima;
     private ClassePersonagem classe;
     private Ataque ataque;
 
@@ -10,16 +11,10 @@ public class Personagem {
         this.nome = nome;
         this.ataque = classe.getAtaqueBase();
         this.classe = classe;
-        this.vida = classe.getVidaBase();
+        this.vidaMaxima = classe.getVidaBase();
+        this.vidaAtual = vidaMaxima;
 
     }
-    public void receberDano(int dano) {
-        this.vida -= dano;
-        if (vida < 0) {
-            vida = 0;
-        }
-    }
-
 
     public String getNome() {
         return nome;
@@ -38,11 +33,11 @@ public class Personagem {
     }
 
     public int getVida() {
-        return vida;
+        return vidaAtual;
     }
 
     public void setVida(int vida) {
-        this.vida = vida;
+        this.vidaAtual = vida;
     }
 
     public Ataque getAtaque() {
@@ -53,11 +48,21 @@ public class Personagem {
         this.ataque = ataque;
     }
 
-    public void atacar(Personagem alvo) {
-        alvo.vida -= ataque.getDano();
-        System.out.println(nome + " usou " + ataque.getNome() + " causando " + ataque.getDano() + " de dano em " + alvo.getNome());
+    public void receberDano(int dano) {
+        this.vidaAtual -= dano;
+        if (vidaAtual < 0) {
+            vidaAtual = 0;
+        }
     }
 
+    protected void aumentarVidaMaxima(int valor) {
+        vidaMaxima += valor;
+        vidaAtual = vidaMaxima;
+
+    }
+    public void curarTotal(){
+        vidaAtual = vidaMaxima;
+    }
 
 
 }

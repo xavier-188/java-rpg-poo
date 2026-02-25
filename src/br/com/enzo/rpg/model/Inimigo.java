@@ -2,37 +2,36 @@ package br.com.enzo.rpg.model;
 
 public class Inimigo {
 
-    private String nome;
-    private int vida;
-    private int dano;
+    private TipoInimigo tipo;
+    private int vidaAtual;
 
-    public Inimigo(String nome, int vida, int dano) {
-        this.nome = nome;
-        this.vida = vida;
-        this.dano = dano;
+    public Inimigo(TipoInimigo tipo) {
+        this.tipo = tipo;
+        this.vidaAtual = tipo.getVida();
+    }
+
+    public String getNome() {
+        return tipo.getNome();
+    }
+    public int getXpConcedido(){
+        return tipo.getXpConcedido();
+    }
+    public int getDano(){
+        return tipo.getDano();
+    }
+    public int getVida(){
+        return tipo.getVida();
     }
 
     public void receberDano(int dano) {
-        this.vida -= dano;
-        if (vida < 0) {
-            vida = 0;
+        this.vidaAtual -= dano;
+        if (vidaAtual < 0) {
+            vidaAtual = 0;
         }
     }
 
     public boolean estaVivo() {
-        return vida > 0;
-    }
-
-    public int getVida() {
-        return vida;
-    }
-
-    public int getDano() {
-        return dano;
-    }
-
-    public String getNome() {
-        return nome;
+        return vidaAtual > 0;
     }
 
 

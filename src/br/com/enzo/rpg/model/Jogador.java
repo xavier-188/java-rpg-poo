@@ -8,43 +8,39 @@ public class Jogador extends Personagem {
     private int nivel;
     private int xpParaProximoNivel;
 
-
     public Jogador(String nome, ClassePersonagem classe) {
         super(nome, classe);
         this.nivel = 1;
-        this.xpParaProximoNivel = 100;
-        this.vidaMaxima = 100;
-        this.vidaAtual = vidaMaxima;
+        this.xpParaProximoNivel = 50;
 
     }
 
     public int getXp() {
         return xp;
     }
-    public int getNivel(){
+
+    public int getNivel() {
         return nivel;
     }
 
-    public void ganharXp(int xpGanho){
+    public void ganharXp(int xpGanho) {
         this.xp += xpGanho;
-        while (xp >= xpParaProximoNivel){
+        while (xp >= xpParaProximoNivel) {
             subirNivel();
         }
 
     }
 
-    private void subirNivel(){
+    private void subirNivel() {
         xp -= xpParaProximoNivel;
         nivel++;
-        vidaMaxima += 20;
-        vidaAtual = vidaMaxima;
         xpParaProximoNivel += 50;
-
+        aumentarVidaMaxima(30);
         System.out.println("\nLEVEL UP!");
         System.out.println("Nível atual: " + nivel);
     }
 
-    public void descansar(){
+    public void descansar() {
         System.out.print("Descansando!");
         try {
             for (int i = 0; i < 5; i++) {
@@ -54,7 +50,7 @@ public class Jogador extends Personagem {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        vidaAtual = vidaMaxima;
+        curarTotal();
         System.out.println("Você descansou e recuperou a vida toda!");
 
     }
