@@ -6,13 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="9d33d0a5-aa38-4ed2-ba81-e86f32d19133" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/com/enzo/rpg/model/ClassePersonagem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/enzo/rpg/model/ClassePersonagem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/br/com/enzo/rpg/model/Inimigo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/enzo/rpg/model/Inimigo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/br/com/enzo/rpg/model/Jogador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/enzo/rpg/model/Jogador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/com/enzo/rpg/model/Jogador.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/br/com/enzo/rpg/model/Personagem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/enzo/rpg/model/Personagem.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/br/com/enzo/rpg/model/TipoInimigo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/enzo/rpg/model/TipoInimigo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/br/com/enzo/rpg/service/BatalhaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/enzo/rpg/service/BatalhaService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/br/com/enzo/rpg/service/JogoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/enzo/rpg/service/JogoService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/br/com/enzo/rpg/service/MenuService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/enzo/rpg/service/MenuService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/br/com/enzo/rpg/util/InimigoFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/br/com/enzo/rpg/util/InimigoFactory.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +24,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Record" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -81,7 +83,10 @@
       <workItem from="1771608263758" duration="9948000" />
       <workItem from="1771868933630" duration="32000" />
       <workItem from="1771964137592" duration="8457000" />
-      <workItem from="1772042415965" duration="5402000" />
+      <workItem from="1772042415965" duration="8624000" />
+      <workItem from="1772131980890" duration="10271000" />
+      <workItem from="1772145198739" duration="480000" />
+      <workItem from="1772145696476" duration="4458000" />
     </task>
     <servers />
   </component>

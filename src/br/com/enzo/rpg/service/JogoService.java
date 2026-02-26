@@ -44,31 +44,42 @@ public class JogoService {
                     break;
 
                 case 3:
+                    jogador.listaItens();
+                    break;
+
+                case 4:
                     jogador.descansar();
                     break;
 
             }
 
-        } while (op != 4);
+        } while (op != 5);
 
 
     }
 
     public void explorar(Jogador jogador) {
-        System.out.println("\nVocê saiu para explorar...");
+        System.out.print("\nVocê saiu para explorar");
         Random random = new Random();
         int evento = random.nextInt(100);
 
         try {
-            Thread.sleep(1500);
+            for (int i = 0; i < 5; i++) {
+                Thread.sleep(550);
+                System.out.print(".");
+            }
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        if (evento <= 50) {
+        if (evento <= 70) {
             Inimigo inimigo = InimigoFactory.gerarInimigo(jogador.getNivel());
-            System.out.println("Você encontrou um " + inimigo.getNome());
+            if (inimigo.getNome().equalsIgnoreCase("Dragão(Boss Final)")){
+                System.out.println("\nPrepare-se para a batalha final...!");
+            }
+            System.out.println("\nVocê encontrou um " + inimigo.getNome() + "!");
             batalhaService.batalhar(jogador, inimigo);
-
+        } else {
+            System.out.println("\nVocê não encontrou nada nessa viagem!");
         }
     }
 }

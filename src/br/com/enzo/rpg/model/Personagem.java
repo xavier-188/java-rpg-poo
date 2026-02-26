@@ -36,6 +36,10 @@ public class Personagem {
         return vidaAtual;
     }
 
+    public int getVidaMaxima() {
+        return vidaMaxima;
+    }
+
     public void setVida(int vida) {
         this.vidaAtual = vida;
     }
@@ -58,10 +62,15 @@ public class Personagem {
     protected void aumentarVidaMaxima(int valor) {
         vidaMaxima += valor;
         vidaAtual = vidaMaxima;
-
     }
-    public void curarTotal(){
+
+
+    public void curarTotal() {
         vidaAtual = vidaMaxima;
+    }
+
+    public void receberCuraPocao(int valor){
+        vidaAtual = Math.min(vidaMaxima, vidaAtual + valor);
     }
 
 

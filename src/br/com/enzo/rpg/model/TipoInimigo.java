@@ -3,12 +3,13 @@ package br.com.enzo.rpg.model;
 import br.com.enzo.rpg.util.Console;
 
 public enum TipoInimigo {
-    GOBLIN("Goblin", 25, 15, 0, 5),
-    ESQUELETO("Esqueleto",30, 10, 0, 5 ),
-    ORC("Orc", 35, 45, 3, 10),
-    GUERREIRO("Guerreiro Sombrio", 40, 25, 2, 10),
-    BRUXO("O Bruxo", 55, 30, 4, 25),
-    DRAGAO("Dragão(Boss Final)", 100, 100, 5, 50);
+    GOBLIN("Goblin", 25, 15, 1, 10),
+    ESQUELETO("Esqueleto",30, 10, 1, 10 ),
+    ESPIRITO("Espírito",35, 20, 2, 15 ),
+    GUERREIRO("Guerreiro Sombrio", 40, 25, 2, 15),
+    ORC("Orc", 35, 45, 3, 20),
+    BRUXO("O Bruxo", 55, 60, 4, 30),
+    DRAGAO("Dragão(Boss Final)", 100, 250, 5, 100);
 
     private String nome;
     private int vida;

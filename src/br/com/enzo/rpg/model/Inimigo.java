@@ -13,21 +13,25 @@ public class Inimigo {
     public String getNome() {
         return tipo.getNome();
     }
-    public int getXpConcedido(){
+
+    public int getXpConcedido() {
         return tipo.getXpConcedido();
     }
-    public int getDano(){
+
+    public int getDano() {
         return tipo.getDano();
     }
-    public int getVida(){
-        return tipo.getVida();
+
+    public int getVida() {
+        return vidaAtual;
+    }
+
+    public TipoInimigo getTipo() {
+        return tipo;
     }
 
     public void receberDano(int dano) {
-        this.vidaAtual -= dano;
-        if (vidaAtual < 0) {
-            vidaAtual = 0;
-        }
+        vidaAtual = Math.max(0, vidaAtual - dano);
     }
 
     public boolean estaVivo() {

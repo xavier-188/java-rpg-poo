@@ -30,23 +30,27 @@ public class MenuService {
 
     public int menuPrincipal(Jogador jogador) {
 
-        System.out.println("\n==========================");
+        System.out.println("\n===========VOCÊ===========");
         System.out.println("Personagem: " + jogador.getNome());
         System.out.println("Classe: " + jogador.getClasse().name());
-        System.out.println("Ataques: " + jogador.getAtaque().getNome());
+        System.out.println("Stats: " + "VidaMax: " +jogador.getVidaMaxima() +" | Ataque/Dano: " +jogador.getAtaque().getDano());
         System.out.println("Nível: " + jogador.getNivel());
         System.out.println("XP: " + jogador.getXp());
         System.out.println("==========================\n");
-        System.out.println("MENU");
+        System.out.println("===========MENU===========");
         System.out.println("1)Explorar");
         System.out.println("2)Treinar");
-        System.out.println("3)Descansar");
-        System.out.println("4)Sair");
+        System.out.println("3)Inventário");
+        System.out.println("4)Descansar");
+        System.out.println("5)Sair");
+        System.out.println("==========================");
         return Console.lerInt();
     }
 
+    //Para Futuro Modo Arena;)
+
 //    public TipoInimigo escolherInimigo(Jogador jogador) {
-//
+
 //        System.out.println("\nEscolha um inimigo");
 //        TipoInimigo[] inimigos = TipoInimigo.values();
 //
@@ -68,8 +72,8 @@ public class MenuService {
 //            return null;
 //        }
 //        return escolhido;
-//
-//    }
+
+
 
 
     public void treinar(Jogador jogador) {
