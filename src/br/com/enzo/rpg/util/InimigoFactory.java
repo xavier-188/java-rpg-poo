@@ -10,9 +10,9 @@ import java.util.List;
 import java.util.Random;
 
 public class InimigoFactory {
+    private static final Random random = new Random();
 
     public static Inimigo gerarInimigo(int nivelJogador) {
-
 
         List<TipoInimigo> disponiveis = new ArrayList<>();
 
@@ -21,28 +21,22 @@ public class InimigoFactory {
                 disponiveis.add(tipo);
             }
         }
-
         if (disponiveis.isEmpty()) {
             return null;
         }
-
-        Random random = new Random();
         TipoInimigo escolhido = disponiveis.get(random.nextInt(disponiveis.size()));
         return new Inimigo(escolhido);
-
     }
 
-    public static TipoItem gerarDrop(){
-        Random random = new Random();
+    public static TipoItem gerarDrop() {
+
         int chance = random.nextInt(100);
 
-        if (chance<40){
+        if (chance < 40) {
             return TipoItem.POCAO_CURA;
-        } else if (chance< 60) {
+        } else if (chance < 60) {
             return TipoItem.POCAO_XP;
         }
         return null;
-
     }
-
 }

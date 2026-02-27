@@ -7,20 +7,18 @@ import br.com.enzo.rpg.model.TipoItem;
 import br.com.enzo.rpg.util.Console;
 import br.com.enzo.rpg.util.InimigoFactory;
 
-import java.awt.*;
 
 public class BatalhaService {
 
     private MenuService menuService = new MenuService();
 
-
     public void batalhar(Jogador jogador, Inimigo inimigo) {
 
         while (inimigo.estaVivo() && jogador.getVida() > 0) {
 
-            System.out.println("1) Atacar - " + jogador.getAtaque().getNome());
-            System.out.println("2) Usar Poção");
-            System.out.println("3) Fugir");
+            System.out.println("1 - Atacar - " + jogador.getAtaque().getNome());
+            System.out.println("2 - Usar Poção");
+            System.out.println("3 - Fugir");
             int op = Console.lerInt();
 
             switch (op) {
@@ -39,7 +37,6 @@ public class BatalhaService {
                     jogador.listaItens();
                     break;
 
-
                 case 3:
                     System.out.println("Você fugiu!");
                     return;
@@ -51,8 +48,8 @@ public class BatalhaService {
             return;
         }
         System.out.println("Você derrotou " + inimigo.getNome() + " | XP Concedido: " + inimigo.getXpConcedido());
-        if (inimigo.getNome().equalsIgnoreCase("Dragão(Boss Final)")){
-            System.out.println("Parabéns, você se tornou " + jogador.getNome() + " o " +jogador.getClasse().name() + " lendário!");
+        if (inimigo.getTipo() == TipoInimigo.DRAGAO) {
+            System.out.println("Parabéns, você se tornou " + jogador.getNome() + " o " + jogador.getClasse().name() + " lendário!");
             System.out.println("FIM");
         }
         TipoItem drop = InimigoFactory.gerarDrop();
@@ -62,11 +59,8 @@ public class BatalhaService {
         } else {
             System.out.println("Não dropou nada...");
         }
-
         jogador.ganharXp(inimigo.getXpConcedido());
     }
-
-
 }
 
 

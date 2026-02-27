@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Jogador extends Personagem {
-    private ClassePersonagem classe;
     private int xp;
     private int nivel;
     private int xpParaProximoNivel;
@@ -17,7 +16,6 @@ public class Jogador extends Personagem {
         super(nome, classe);
         this.nivel = 1;
         this.xpParaProximoNivel = 50;
-
     }
 
     public int getXp() {
@@ -55,7 +53,7 @@ public class Jogador extends Personagem {
         System.out.print("Descansando!");
         try {
             for (int i = 0; i < 5; i++) {
-                Thread.sleep(1000);
+                Thread.sleep(550);
                 System.out.print(".");
             }
         } catch (InterruptedException e) {
@@ -63,7 +61,6 @@ public class Jogador extends Personagem {
         }
         curarTotal();
         System.out.println("Você descansou e recuperou a vida toda!");
-
     }
 
     public void adicionarItem(TipoItem item) {
@@ -90,7 +87,6 @@ public class Jogador extends Personagem {
             TipoItem item = getInventario().get(escolha - 1);
             usarItem(item);
             getInventario().remove(escolha - 1);
-
         }
     }
 

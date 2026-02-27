@@ -38,5 +38,4 @@ public class Inimigo {
         return vidaAtual > 0;
     }
 
-
 }

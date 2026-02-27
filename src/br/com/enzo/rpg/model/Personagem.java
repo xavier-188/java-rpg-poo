@@ -13,43 +13,30 @@ public class Personagem {
         this.classe = classe;
         this.vidaMaxima = classe.getVidaBase();
         this.vidaAtual = vidaMaxima;
-
     }
 
     public String getNome() {
         return nome;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
     public ClassePersonagem getClasse() {
         return classe;
-    }
-
-    public void setClasse(ClassePersonagem classe) {
-        this.classe = classe;
     }
 
     public int getVida() {
         return vidaAtual;
     }
 
-    public int getVidaMaxima() {
-        return vidaMaxima;
-    }
-
     public void setVida(int vida) {
         this.vidaAtual = vida;
     }
 
-    public Ataque getAtaque() {
-        return ataque;
+    public int getVidaMaxima() {
+        return vidaMaxima;
     }
 
-    public void setAtaque(Ataque ataque) {
-        this.ataque = ataque;
+    public Ataque getAtaque() {
+        return ataque;
     }
 
     public void receberDano(int dano) {
@@ -64,14 +51,12 @@ public class Personagem {
         vidaAtual = vidaMaxima;
     }
 
-
     public void curarTotal() {
         vidaAtual = vidaMaxima;
     }
 
-    public void receberCuraPocao(int valor){
+    public void receberCuraPocao(int valor) {
         vidaAtual = Math.min(vidaMaxima, vidaAtual + valor);
     }
-
 
 }

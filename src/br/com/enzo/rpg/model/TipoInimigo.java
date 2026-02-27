@@ -8,8 +8,8 @@ public enum TipoInimigo {
     ESPIRITO("Espírito",35, 20, 2, 15 ),
     GUERREIRO("Guerreiro Sombrio", 40, 25, 2, 15),
     ORC("Orc", 35, 45, 3, 20),
-    BRUXO("O Bruxo", 55, 60, 4, 30),
-    DRAGAO("Dragão(Boss Final)", 100, 250, 5, 100);
+    BRUXO("Bruxo", 55, 60, 4, 30),
+    DRAGAO("Dragão(Boss Final)", 250, 100, 5, 150);
 
     private String nome;
     private int vida;
@@ -17,10 +17,10 @@ public enum TipoInimigo {
     private int nivelNecessario;
     private int xpConcedido;
 
-    TipoInimigo(String nome, int dano, int vida, int nivelNecessario, int xpConcedido) {
+    TipoInimigo(String nome, int vida, int dano, int nivelNecessario, int xpConcedido) {
         this.nome = nome;
-        this.dano = dano;
         this.vida = vida;
+        this.dano = dano;
         this.nivelNecessario = nivelNecessario;
         this.xpConcedido = xpConcedido;
     }
@@ -44,6 +44,5 @@ public enum TipoInimigo {
     public int getXpConcedido() {
         return xpConcedido;
     }
-
 
 }

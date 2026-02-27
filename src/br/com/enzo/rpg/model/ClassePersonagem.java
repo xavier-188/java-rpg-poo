@@ -18,19 +18,8 @@ public enum ClassePersonagem {
         return ataqueBase;
     }
 
-
-
-
-    public void setAtaqueBase(Ataque ataqueBase) {
-        this.ataqueBase = ataqueBase;
-    }
-
     public int getVidaBase() {
         return vidaBase;
-    }
-
-    public void setVidaBase(int vidaBase) {
-        this.vidaBase = vidaBase;
     }
 
     @Override

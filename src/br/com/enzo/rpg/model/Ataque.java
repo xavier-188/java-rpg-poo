@@ -13,10 +13,6 @@ public class Ataque {
         return nomeAtaque;
     }
 
-    public void setNome(String nome) {
-        this.nomeAtaque = nome;
-    }
-
     public int getDano() {
         return dano;
     }
