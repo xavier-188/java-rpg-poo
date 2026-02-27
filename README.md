@@ -1,42 +1,58 @@
-# 🗡️ Java RPG Console
+🗡️RPG Java Console
 
-RPG de console desenvolvido em Java utilizando Programação Orientada a Objetos (POO), enums e sistema de batalha.
+Um RPG de terminal desenvolvido em Java puro, com sistema de batalha, progressão de nível, inventário e persistência de dados utilizando Gson.
+O jogador pode escolher uma classe, explorar o mundo, enfrentar inimigos (incluindo um boss final), ganhar experiência, evoluir atributos e salvar o progresso.
 
----
+🎮 Funcionalidades
 
-## 🎮 Funcionalidades
+✔ Escolha de classe (Guerreiro, Mago, Arqueiro, Orc)
+✔ Sistema de batalha por turnos
+✔ Geração de inimigos com base no nível do jogador.
+✔ Sistema de XP e level up
+✔ Progressão de atributos (vida e dano)
+✔ Inventário com uso de itens
+✔ Sistema de drop aleatório
+✔ Boss final (Dragão)
+✔ Sistema de salvar e carregar jogo (JSON)
+✔ Organização em camadas (model, service, util, persistence)
 
-- Escolha de classe (Guerreiro, Mago, Arqueiro)
-- Sistema de batalha
-- Sistema de XP
-- Menu interativo
-- Organização em pacotes
-- Uso de Enum para classes e ataques
+🛠 Tecnologias Utilizadas
 
----
+Java 17+
+Gson (serialização e persistência em JSON)
+Programação Orientada a Objetos
+IntelliJ IDEA
 
-## 🛠️ Tecnologias utilizadas
+🧠 Conceitos Aplicados
 
-- Java
-- Programação Orientada a Objetos
-- Enum
-- Estrutura de pacotes
+Herança (Personagem → Jogador)
+Enum com atributos personalizados
+Encapsulamento
+Factory Pattern (InimigoFactory)
+Separação de responsabilidades (Service Layer)
+Manipulação de arquivos
+Tratamento de exceções
 
----
+🤖 Uso de IA
 
-## 📂 Estrutura do projeto
-src
-├── model
-├── service
-├── util
-└── Main.java
+Durante o desenvolvimento, utilizei Inteligência Artificial como ferramenta de apoio para:
+Esclarecimento de dúvidas conceituais
+Sugestões de melhoria de código
+Discussões sobre arquitetura
+Readme
+Todo o código foi compreendido, adaptado e implementado por mim, como parte do processo de aprendizado e prática em Java.
 
-## 🤖 Uso de Inteligência Artificial
+▶ Como Executar
 
-Durante o desenvolvimento deste projeto, foram utilizadas ferramentas de Inteligência Artificial como apoio para:
+Clone o repositório: git clone https://github.com/xavier-188/java-rpg-poo.git
+Abra no IntelliJ/VsCode
+Execute a classe Main
+Divirta-se 
 
-- Estruturação de enums e organização em pacotes
-- Sugestões de melhorias na arquitetura do código
-- Boas práticas de estruturação de README
+🚀 Melhorias Futuras
 
-A IA foi utilizada como ferramenta de apoio ao aprendizado, enquanto toda a implementação e compreensão da lógica foram desenvolvidas manualmente.
+Sistema de ataques especiais
+Sistema de raridade de itens
+Modo Arena
+Interface gráfica
+
