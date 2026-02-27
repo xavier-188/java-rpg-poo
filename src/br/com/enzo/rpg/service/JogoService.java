@@ -17,7 +17,7 @@ public class JogoService {
 
     public void iniciar() {
         System.out.println("============================");
-        System.out.println("  \uD83D\uDDE1\uFE0F RPG JAVA \uD83D\uDDE1\uFE0F");
+        System.out.println("          RPG JAVA         ");
         System.out.println("============================\n");
         System.out.println("1 - Novo Jogo");
         System.out.println("2 - Carregar Jogo");
